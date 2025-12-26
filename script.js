@@ -5,11 +5,23 @@ function sendMessage() {
   let userMessage = input.value;
   if (userMessage === "") return;
 
-  chatBox.innerHTML += "<p><b>You:</b> " + userMessage + "</p>";
+  // Add user bubble
+  let userBubble = document.createElement("div");
+  userBubble.className = "user-bubble";
+  userBubble.innerText = userMessage;
+  chatBox.appendChild(userBubble);
+
   input.value = "";
 
-  chatBox.innerHTML += "<p><b>Bot:</b> thinking...</p>";
+  // Add bot bubble (thinking)
+  let botBubble = document.createElement("div");
+  botBubble.className = "bot-bubble";
+  botBubble.innerText = "thinking...";
+  chatBox.appendChild(botBubble);
 
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  // Fake AI reply after 1.5 seconds
   setTimeout(() => {
     let replies = [
       "That’s interesting 🤔",
@@ -19,13 +31,7 @@ function sendMessage() {
       "I will answer better in the future!"
     ];
 
-    let botReply = replies[Math.floor(Math.random() * replies.length)];
-
-    chatBox.innerHTML = chatBox.innerHTML.replace(
-      "<p><b>Bot:</b> thinking...</p>",
-      ""
-    );
-
-    chatBox.innerHTML += "<p><b>Bot:</b> " + botReply + "</p>";
+    botBubble.innerText = replies[Math.floor(Math.random() * replies.length)];
+    chatBox.scrollTop = chatBox.scrollHeight;
   }, 1500);
 }
