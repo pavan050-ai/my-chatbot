@@ -5,15 +5,22 @@ function handleKey(event) {
 }
 
 function sendMessage() {
-  let input = document.getElementById("user-input");
-  let chat = document.getElementById("chat-box");
+  const input = document.getElementById("user-input");
+  const chat = document.getElementById("chat-box");
 
   if (input.value.trim() === "") return;
 
-  chat.innerHTML += `<div class="user">${input.value}</div>`;
+  const userMsg = document.createElement("div");
+  userMsg.className = "user";
+  userMsg.innerText = input.value;
+
+  chat.appendChild(userMsg);
 
   setTimeout(() => {
-    chat.innerHTML += `<div class="bot">I am still learning 🤖</div>`;
+    const botMsg = document.createElement("div");
+    botMsg.className = "bot";
+    botMsg.innerText = "I’m still learning 🤖";
+    chat.appendChild(botMsg);
     chat.scrollTop = chat.scrollHeight;
   }, 700);
 
