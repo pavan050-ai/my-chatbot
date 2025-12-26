@@ -5,32 +5,36 @@
   <title>Chatera</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="light">
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <div class="logo">🤖</div>
-    <div class="title">Chatera</div>
-    <button onclick="toggleTheme()" class="theme-btn">🌓</button>
+    <div class="top-title">Chatera</div>
+    <button class="theme-btn" onclick="toggleTheme()">🌓</button>
   </div>
 
-  <!-- Chat Area -->
-  <div id="chat-box" class="chat-box">
-    <div class="bot">Hello! Ask me anything 🙂</div>
-  </div>
+  <!-- Page Wrapper -->
+  <div class="page">
+    <div class="chat-container">
+      <div id="chat-box" class="chat-box">
+        <div class="bot">Hello! Ask Chatera anything ✨</div>
+      </div>
 
-  <!-- Input Area -->
-  <div class="input-area">
-    <label class="file-btn">
-      📎
-      <input type="file" hidden />
-    </label>
+      <!-- Input Area -->
+      <div class="input-area">
+        <label class="file-btn">
+          ⭐
+          <input type="file" hidden />
+        </label>
 
-    <input
-      id="user-input"
-      placeholder="Type to begin / Ask Chatera..."
-      onkeydown="handleKey(event)"
-    />
+        <input
+          id="user-input"
+          placeholder="Ask Chatera…"
+          onkeydown="handleKey(event)"
+        />
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
