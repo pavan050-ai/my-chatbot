@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Chatbot</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Chatera</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="light">
 
-<div id="chat-container">
-  <div id="chat-box"></div>
-
-  <div id="input-area">
-    <input id="user-input" placeholder="Type your message..." />
-    <button id="send-button" onclick="sendMessage()">Send</button>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="logo">🤖</div>
+    <div class="title">Chatera</div>
+    <button onclick="toggleTheme()" class="theme-btn">🌓</button>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <!-- Chat Area -->
+  <div id="chat-box" class="chat-box">
+    <div class="bot">Hello! Ask me anything 🙂</div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-area">
+    <label class="file-btn">
+      📎
+      <input type="file" hidden />
+    </label>
+
+    <input
+      id="user-input"
+      placeholder="Type to begin / Ask Chatera..."
+      onkeydown="handleKey(event)"
+    />
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
